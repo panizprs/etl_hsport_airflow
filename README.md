@@ -2,3 +2,5 @@ In this repository, I implemented a simple ETL via Python and SQL. I got inspire
 1) Load data from Excel and transform it into Pandas DataFrame.
 2) Load Pandas DataFrame into SQL DB.
 3) Automate it via Airflow.
+
+load_data.py loads the `customers` and `employees` manually while Airflow dags `orders_dag.py` and `products_dag.py` load `orders` and `products` automatically.
