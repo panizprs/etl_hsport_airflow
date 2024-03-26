@@ -9,4 +9,7 @@ customers = customers.drop_duplicates(unique_columns, keep = 'first')
 print(len(customers))
 print(customers.info())
 
-employees = pd.read_excel(f'{input_data_dir}H+ Sport Employees.xlsx', sheet_name='data')
+employees = pd.read_excel(f'{input_data_dir}H+ Sport Employees.xlsx', sheet_name='Employees')
+columns_to_drop = [0.0291]
+employees = employees.drop(columns = columns_to_drop)
+
