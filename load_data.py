@@ -11,7 +11,7 @@ columns_to_drop = [0.0291]
 employees = employees.drop(columns = columns_to_drop)
 
 with duckdb.connect('transformed_data/hsport.db') as con:
-    con.sql("CREATE TABLE customers AS SELECT * FROM customers")
-    con.sql("CREATE TABLE employees AS SELECT * FROM employees")
+    con.sql('''CREATE or replace TABLE customers AS SELECT * FROM customers''')
+    con.sql('''CREATE or replace TABLE employees AS SELECT * FROM employees''')
 
-    print(con.sql('select * from employees limit 5'))
+    print(con.sql('''select * from employees limit 5'''))
